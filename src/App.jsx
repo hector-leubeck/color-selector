@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ColorDisplay from "./components/ColorDisplay";
 import ColorSelector from "./components/ColorSelector";
 import Container from "./components/Container";
+import CopyButton from "./components/CopyButton";
 
 const MainButton = styled.button`
   background-color: #3498db;
@@ -23,8 +24,9 @@ function App() {
 
   return (
     <Container>
-      <ColorSeclector setColor={setColor} />
+      <ColorSelector setColor={setColor} />
       <ColorDisplay color={color} />
+      <CopyButton text={color} />
     </Container>
   );
 }

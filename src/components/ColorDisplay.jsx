@@ -8,12 +8,12 @@ const Display = styled.div`
   border-radius: 8px;
   font-size: 18px;
   color: white;
+  transition: background-color 0.3s ease-in-out;
 `;
 
 const hexToRgb = (hex) => {
   const cleanHex = hex.startsWith("#") ? hex.substring(1) : hex;
   const entireValue = parseInt(cleanHex, 16);
-
   const redValue = (entireValue >> 16) & 255;
   const greenValue = (entireValue >> 8) & 255;
   const blueValue = entireValue & 255;
