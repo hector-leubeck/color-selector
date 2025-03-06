@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ColorDisplay from "./components/ColorDisplay";
+import ColorSelector from "./components/ColorSelector";
+import Container from "./components/Container";
 
 const MainButton = styled.button`
   background-color: #3498db;
@@ -16,11 +19,13 @@ const MainButton = styled.button`
 `;
 
 function App() {
+  const [color, setColor] = useState("ff0000");
+
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
-      <h1>Color Selector</h1>
-      <MainButton>Pick a Color</MainButton>
-    </div>
+    <Container>
+      <ColorSeclector setColor={setColor} />
+      <ColorDisplay color={color} />
+    </Container>
   );
 }
 
