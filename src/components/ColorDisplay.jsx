@@ -10,21 +10,24 @@ const Display = styled.div`
   color: white;
 `;
 
-const HexToRgb = (hex) => {
-  const entireValue = parseInt(hex, substring(1), 16);
+const hexToRgb = (hex) => {
+  const cleanHex = hex.startsWith("#") ? hex.substring(1) : hex;
+  const entireValue = parseInt(cleanHex, 16);
+
   const redValue = (entireValue >> 16) & 255;
   const greenValue = (entireValue >> 8) & 255;
   const blueValue = entireValue & 255;
+
   return `RGB: (${redValue}, ${greenValue}, ${blueValue})`;
 };
 
-const ColorDisplay = ({ color } => {
-    return (
-        <Display style={{ backgroundColor: color }}>
-        <p>HEX: {color}</p>
-        <p>RGB: {hexToRgb(color)}</p>
-      </Display>
-    )
-}
+const ColorDisplay = ({ color }) => {
+  return (
+    <Display style={{ backgroundColor: color }}>
+      <p>HEX: {color}</p>
+      <p>RGB: {hexToRgb(color)}</p>
+    </Display>
+  );
+};
 
-)
+export default ColorDisplay;
