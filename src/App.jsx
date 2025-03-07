@@ -6,7 +6,7 @@ import Container from "./components/Container";
 import CopyButton from "./components/CopyButton";
 
 const MainButton = styled.button`
-  background-color: #3498db;
+  background-color: #202124;
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -15,7 +15,7 @@ const MainButton = styled.button`
   border-radius: 5px;
 
   &:hover {
-    background-color: #2980b9;
+    background-color: #5f6368;
   }
 `;
 
@@ -24,7 +24,6 @@ const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 99vw;
   background-color: #121212;
   margin: 0;
   padding: 0;
@@ -32,12 +31,18 @@ const AppWrapper = styled.div`
 
 function App() {
   const [color, setColor] = useState("ff0000");
+  const [bgColor, setBgColor] = useState("#121212");
+
+  const handleColorChange = (newColor) => {
+    setColor(newColor);
+    setBgColor(newColor);
+  };
 
   return (
     <AppWrapper>
-      <Container>
-        <ColorSelector setColor={setColor} />
-        <ColorDisplay color={color} />
+      <Container backgroundColor={bgColor}>
+        <ColorSelector setColor={handleColorChange} />
+        <ColorDisplay color="#202124" />
         <CopyButton text={color} />
       </Container>
     </AppWrapper>
