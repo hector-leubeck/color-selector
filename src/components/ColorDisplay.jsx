@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Display = styled.div`
+  min-width: 300px;
   margin-top: 20px;
   padding: 20px;
   text-align: center;
@@ -9,6 +10,7 @@ const Display = styled.div`
   font-size: 18px;
   color: white;
   transition: background-color 0.3s ease-in-out;
+  flex: 0 1 1;
 `;
 
 const hexToRgb = (hex) => {

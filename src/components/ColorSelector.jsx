@@ -19,12 +19,13 @@ const ColorWheel = styled.input`
 
   &::-webkit-color-swatch {
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 1px solid #fff;
+    box-shadow: inset 2px 2px 2px 2px #e0e2e4;
   }
 
   &::-moz-color-swatch {
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 1px solid #fff;
   }
 
   &:hover {
