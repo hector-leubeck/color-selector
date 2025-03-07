@@ -6,6 +6,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-width: 80vw;
   background-color: #202124;
   color: #e8eaed;
   font-family: Arial, sans-serif;

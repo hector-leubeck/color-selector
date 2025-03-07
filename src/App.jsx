@@ -19,15 +19,28 @@ const MainButton = styled.button`
   }
 `;
 
+const AppWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 99vw;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+`;
+
 function App() {
   const [color, setColor] = useState("ff0000");
 
   return (
-    <Container>
-      <ColorSelector setColor={setColor} />
-      <ColorDisplay color={color} />
-      <CopyButton text={color} />
-    </Container>
+    <AppWrapper>
+      <Container>
+        <ColorSelector setColor={setColor} />
+        <ColorDisplay color={color} />
+        <CopyButton text={color} />
+      </Container>
+    </AppWrapper>
   );
 }
 

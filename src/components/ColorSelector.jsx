@@ -1,16 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = styled.input`
+const PickerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+`;
+
+const ColorWheel = styled.input`
   width: 100px;
-  height: 50px;
+  height: 100px;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
   background: none;
+  padding: 0;
+
+  &::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+
+  &::-moz-color-swatch {
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
 `;
 
 const ColorSelector = ({ setColor }) => {
-  return <Input type="color" onChange={(e) => setColor(e.target.value)} />;
+  return (
+    <PickerContainer>
+      <ColorWheel type="color" onChange={(e) => setColor(e.target.value)} />
+    </PickerContainer>
+  );
 };
 
 export default ColorSelector;
