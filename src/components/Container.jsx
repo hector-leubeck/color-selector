@@ -1,13 +1,14 @@
-// src/components/Container.js
 import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #121212;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #202124;
+  color: #e8eaed;
+  font-family: Arial, sans-serif;
 `;
 
 export default Container;
